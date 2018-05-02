@@ -7,11 +7,13 @@
 
 package cn.edu.uestc.test;
 
-import cn.edu.uestc.dal.dao.PaperDAO;
 import cn.edu.uestc.model.Paper;
+import cn.edu.uestc.service.PaperService;
+import cn.edu.uestc.template.ServiceResult;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,18 +28,30 @@ public class PaperTest extends BaseTest {
      * 论文 DAO
      */
     @Autowired
-    private PaperDAO paperDAO;
+    private PaperService paperService;
 
     /**
-     * 测试查询所有论文
+     * 测试插入论文论文
      *
      * @throws Exception
      */
     @Test
-    public void testQueryAll() throws Exception {
-        List<Paper> papers = paperDAO.queryAll();
-        for (Paper p : papers) {
-            System.out.println(p.getId() + " " + p.getName());
-        }
+    public void testInsertPaper() {
+        List<Paper> papers = new ArrayList<>();
+        Paper p1 = new Paper();
+        p1.setName("测试论文1");
+        Paper p2 = new Paper();
+        p2.setName("测试论文2");
+        Paper p3 = new Paper();
+        p3.setName("测试论文3");
+        Paper p4 = new Paper();
+        p4.setName("测试论文4");
+        papers.add(p1);
+        papers.add(p2);
+        papers.add(p3);
+        papers.add(p4);
+        ServiceResult res = paperService.addPapers(papers);
+        System.out.println(res.isSuccess());
+        System.out.println(res.getResultCode().getDescription());
     }
 }

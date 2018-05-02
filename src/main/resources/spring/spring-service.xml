@@ -19,7 +19,20 @@
         <!-- 注入数据库连接池 -->
         <property name="dataSource" ref="dataSource" />
     </bean>
+    <bean id="transactionTemplate"
+          class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
 
     <!-- 注解的声明式事务 -->
-    <tx:annotation-driven transaction-manager="transactionManager" />
+    <!-- tx:annotation-driven transaction-manager="transactionManager" /-->
+
+    <!-- 服务模板 -->
+    <bean id="serviceTemplate"
+          class="cn.edu.uestc.template.ServiceTemplate" />
+
+    <!-- 服务 -->
+    <bean id="paperService"
+          class="cn.edu.uestc.service.impl.PaperServiceImpl" />
+
 </beans>

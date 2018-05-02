@@ -8,6 +8,7 @@
 package cn.edu.uestc.dal.dao;
 
 import cn.edu.uestc.model.Paper;
+import org.springframework.dao.DataAccessException;
 
 import java.util.List;
 
@@ -24,6 +25,14 @@ public interface PaperDAO {
      *
      * @return 结果集
      */
-    List<Paper> queryAll();
+    List<Paper> selectAllPaper() throws DataAccessException;
+
+    /**
+     * 插入论文
+     *
+     * @param paper 论文
+     * @return 插入函数
+     */
+    long insertPaper(Paper paper) throws DataAccessException;
 
 }
