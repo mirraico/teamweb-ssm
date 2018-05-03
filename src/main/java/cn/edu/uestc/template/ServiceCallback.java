@@ -18,13 +18,12 @@ public interface ServiceCallback {
     /**
      * 执行服务前的检查
      *
-     * @return
-     * @throws Exception
+     * @return 检查是否通过
      */
-    boolean check() throws Exception;
+    boolean check();
 
     /**
-     * 执行的服务
+     * 要执行的服务
      */
     void service();
 

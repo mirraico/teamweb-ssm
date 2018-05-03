@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 /**
+ * 论文 service impl
  *
  * @author feixuan.fx
  * @version $Id: PaperServiceImpl.java, v 0.1 2018-05-02 23:08 feixuan.fx Exp $
@@ -35,10 +36,10 @@ public class PaperServiceImpl implements PaperService {
     private PaperDAO paperDAO;
 
     /**
-     * 添加一篇论文
+     * 添加一组论文
      *
-     * @param papers 论文
-     * @return 结果
+     * @param papers 要添加的论文集合
+     * @return 执行结果
      */
     @Override
     public ServiceResult addPapers(final List<Paper> papers) {
@@ -46,7 +47,7 @@ public class PaperServiceImpl implements PaperService {
         final ServiceResult result = new ServiceResult();
         serviceTemplate.execute(new ServiceCallback() {
             @Override
-            public boolean check() throws Exception {
+            public boolean check() {
                 return true;
             }
 

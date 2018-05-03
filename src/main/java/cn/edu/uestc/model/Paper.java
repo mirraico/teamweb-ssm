@@ -8,7 +8,8 @@
 package cn.edu.uestc.model;
 
 /**
- * 论文
+ * 论文 model
+ *
  * @author feixuan.fx
  * @version $Id: Paper.java, v 0.1 2018-05-02 18:00 feixuan.fx Exp $
  */

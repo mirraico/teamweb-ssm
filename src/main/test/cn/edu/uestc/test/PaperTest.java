@@ -31,9 +31,7 @@ public class PaperTest extends BaseTest {
     private PaperService paperService;
 
     /**
-     * 测试插入论文论文
-     *
-     * @throws Exception
+     * 测试插入论文
      */
     @Test
     public void testInsertPaper() {

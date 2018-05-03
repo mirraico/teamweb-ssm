@@ -31,7 +31,7 @@ public class ServiceTemplate {
      * 执行服务
      *
      * @param callback 服务回调
-     * @param result 执行结果
+     * @param result 执行结果（将结果填充进去）
      * @param isTransaction 是否需要开启事务
      */
     public void execute(final ServiceCallback callback, ServiceResult result, boolean isTransaction) {
@@ -45,7 +45,6 @@ public class ServiceTemplate {
         }
 
         try {
-
             // 执行服务前检查
             if (!callback.check()) {
                 return;
@@ -74,7 +73,5 @@ public class ServiceTemplate {
             e.printStackTrace();
             result.buildFail(ServiceResultCodeEnum.UNKNOWN_EXCEPTION);
         }
-
     }
-
 }

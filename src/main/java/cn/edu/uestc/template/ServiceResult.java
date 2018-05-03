@@ -21,7 +21,7 @@ public class ServiceResult {
     private boolean isSuccess = false;
 
     /**
-     * 结果码
+     * 携带的结果码
      */
     private ServiceResultCodeEnum resultCode = ServiceResultCodeEnum.UNKNOWN_EXCEPTION;
 
@@ -44,15 +44,6 @@ public class ServiceResult {
     }
 
     /**
-     * 修改描述
-     *
-     * @param description 描述
-     */
-    public void setDescription(String description) {
-        this.resultCode.setDescription(description);
-    }
-
-    /**
      * 构建成功结果
      *
      * @param resultCode 结果代码
@@ -60,6 +51,15 @@ public class ServiceResult {
     public void buildSuccess(ServiceResultCodeEnum resultCode) {
         this.isSuccess = true;
         this.resultCode = resultCode;
+    }
+
+    /**
+     * 修改结果中携带的描述
+     *
+     * @param description 描述
+     */
+    public void setDescription(String description) {
+        this.resultCode.setDescription(description);
     }
 
     /**

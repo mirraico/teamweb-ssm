@@ -13,6 +13,7 @@ import cn.edu.uestc.template.ServiceResult;
 import java.util.List;
 
 /**
+ * 论文 service
  *
  * @author feixuan.fx
  * @version $Id: PaperService.java, v 0.1 2018-05-02 22:38 feixuan.fx Exp $
@@ -20,10 +21,10 @@ import java.util.List;
 public interface PaperService {
 
     /**
-     * 添加一篇论文
+     * 添加一组论文
      *
-     * @param papers 论文
-     * @return 结果
+     * @param papers 要添加的论文集合
+     * @return 执行结果
      */
     ServiceResult addPapers(List<Paper> papers);
 

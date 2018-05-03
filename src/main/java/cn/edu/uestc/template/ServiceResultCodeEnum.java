@@ -8,7 +8,7 @@
 package cn.edu.uestc.template;
 
 /**
- * 服务执行结果代码枚举类
+ * 服务执行结果码枚举类
  *
  * @author feixuan.fx
  * @version $Id: ServiceResultCodeEnum.java, v 0.1 2018-05-02 20:20 feixuan.fx Exp $
@@ -56,7 +56,7 @@ public enum ServiceResultCodeEnum {
     private String description;
 
     /**
-     * 构造函数方法
+     * 构造方法
      *
      * @param code 结果码
      * @param description 描述
@@ -66,12 +66,18 @@ public enum ServiceResultCodeEnum {
         this.description = description;
     }
 
-    public static ServiceResultCodeEnum getByCode(String code) {
-        if (code == null) {
+    /**
+     * 通过结果码字符串获得结果码
+     *
+     * @param str 结果码字符串
+     * @return 对应的结果码
+     */
+    public static ServiceResultCodeEnum getByCode(String str) {
+        if (str == null) {
             return null;
         }
         for (ServiceResultCodeEnum resultCode : values()) {
-            if (resultCode.getCode().equals(code)) {
+            if (resultCode.getCode().equals(str)) {
                 return resultCode;
             }
         }

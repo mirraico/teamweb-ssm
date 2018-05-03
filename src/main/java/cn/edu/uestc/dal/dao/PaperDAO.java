@@ -21,17 +21,17 @@ import java.util.List;
 public interface PaperDAO {
 
     /**
-     * 查询所有论文
+     * selectAllPaper
      *
-     * @return 结果集
+     * @return result
      */
     List<Paper> selectAllPaper() throws DataAccessException;
 
     /**
-     * 插入论文
+     * insertPaper
      *
-     * @param paper 论文
-     * @return 插入函数
+     * @param paper paper
+     * @return result
      */
     long insertPaper(Paper paper) throws DataAccessException;
 

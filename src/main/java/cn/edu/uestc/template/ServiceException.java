@@ -16,7 +16,7 @@ package cn.edu.uestc.template;
 public class ServiceException extends RuntimeException {
 
     /**
-     * 结果码
+     * 携带的结果码
      */
     private ServiceResultCodeEnum resultCode;
 
